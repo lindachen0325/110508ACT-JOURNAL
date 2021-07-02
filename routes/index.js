@@ -66,6 +66,10 @@ router.get('/material', function(req, res, next) {
   res.render('material', { title: 'material' });
 });
 
+router.get('/page', function(req, res, next) {
+  res.render('page', { title: 'page' });
+});
+
 module.exports = router;
 
 

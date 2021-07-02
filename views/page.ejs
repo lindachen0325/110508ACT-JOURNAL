@@ -1,0 +1,146 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>ACT JOURNAL</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/css/main.css">
+	<link rel="stylesheet" href="/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/templatemo-style.css">
+	<link rel="stylesheet" href="/css/profile.css">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/3.6.95/css/materialdesignicons.css"
+		rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+		integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+</head>
+
+<body class="homepage is-preload">
+	<div id="page-wrapper">
+		<!-- Nav -->
+		<nav id="nav">
+			<ul><a href="/" id="logo">ACT JOURNAL</a>
+				<li class="current"><a href="/">首頁</a></li>
+				<li>
+					<a href="material">素材庫</a>
+					<ul>
+						<li><a href="templets">模板</a></li>
+
+						<li><a href="material">素材</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="following">追蹤名單</a>
+					<ul>
+						<li><a href="following">追蹤中</a></li>
+						<li><a href="follower">粉絲</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="profile">使用者</a>
+					<ul>
+						<li>
+							<a href="profile">查看個人檔案</a>
+							<ul>
+								<li><a href="profileEdit">編輯簡介</a></li>
+								<li><a href="privateSet">隱私設定</a></li>
+							</ul>
+						</li>
+						<li><a href="/sign_in">登入</a></li>
+						<li><a href="/sign_out">登出</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="bookcase">書櫃</a>
+					<ul>
+						<li><a href="bookcase">個人書櫃</a></li>
+						<li><a href="newbookshelf">新增書櫃</a></li>
+						<li><a href="newnote">新增手帳</a></li>
+					</ul>
+				</li>
+				<li><a href="/sign_up" class="button">註冊</a></li>
+			</ul>
+		</nav>
+		<!-- Main -->
+		<div style="width:350px;height:300px;" class="some-container">
+			<canvas id="canvas"></canvas>
+		</div>
+
+		<div id="main" class="m">
+			<h2 id="p" class="major"><span>畫板</span></h2>
+			<form id="privateSet">
+
+			</form>
+			<div style="width: 257mm;height: 182mm;" class="some-container">
+				<canvas id="canvas"></canvas>
+			</div>
+
+		</div>
+
+		<script type="text/javascript">
+
+			$("#drawr-container .demo-canvas").drawr({
+				"enable_tranparency": true
+			});
+
+			$(".demo-canvas").drawr("start");
+
+			//add custom save button.
+			var buttoncollection = $("#drawr-container .demo-canvas").drawr("button", {
+				"icon": "mdi mdi-folder-open mdi-24px"
+			}).on("touchstart mousedown", function () {
+				//alert("demo of a custom button with your own functionality!");
+				$("#file-picker").click();
+			});
+			var buttoncollection = $("#drawr-container .demo-canvas").drawr("button", {
+				"icon": "mdi mdi-content-save mdi-24px"
+			}).on("touchstart mousedown", function () {
+				var imagedata = $("#drawr-container .demo-canvas").drawr("export", "image/jpeg");
+				var element = document.createElement('a');
+				element.setAttribute('href', imagedata);// 'data:text/plain;charset=utf-8,' + encodeURIComponent("sillytext"));
+				element.setAttribute('download', "test.jpg");
+				element.style.display = 'none';
+				document.body.appendChild(element);
+				element.click();
+				document.body.removeChild(element);
+			});
+			$("#file-picker")[0].onchange = function () {
+				var file = $("#file-picker")[0].files[0];
+				if (!file.type.startsWith('image/')) { return }
+				var reader = new FileReader();
+				reader.onload = function (e) {
+					$("#drawr-container .demo-canvas").drawr("load", e.target.result);
+				};
+				reader.readAsDataURL(file);
+			};
+
+		</script>
+
+		<!-- Copyright -->
+		<div id="copyright">
+			<ul class="menu">
+				<li>Design</li>
+				<li>&copy;
+					<a href="index.ejs">NTUB110508</a>
+				</li>
+			</ul>
+		</div>
+
+	</div>
+	<!--navbar外掛-->
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/jquery.dropotron.min.js"></script>
+	<script src="/js/util.js"></script>
+	<script src="/js/jquery.scrolly.min.js"></script>
+	<script src="/js/breakpoints.min.js"></script>
+	<script src="/js/main.js"></script>
+
+	<!--外掛-->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+	<script type="text/javascript" src="jquery.drawr.combined.js?v=2"></script>
+
+
+</body>
+
+</html>
