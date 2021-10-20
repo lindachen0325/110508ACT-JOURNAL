@@ -18,12 +18,12 @@
 	<!-- Nav -->
 	<nav id="nav">
 		<ul><a href="/" id="logo">ACT JOURNAL</a>
-			<li class="current"><a href="/">首頁</a></li>
+			<li><a href="/">首頁</a></li>
 			<li>
 				<a href="material">素材庫</a>
 				<ul>
 					<li><a href="templets">模板</a></li>
-					
+
 					<li><a href="material">素材</a></li>
 				</ul>
 			</li>
@@ -35,7 +35,7 @@
 				</ul>
 			</li>
 			<li>
-				<a href="profile">使用者</a>
+				<a href="/profile"><%= username %>您好</a>
 				<ul>
 					<li>
 						<a href="profile">查看個人檔案</a>
@@ -44,11 +44,11 @@
 							<li><a href="privateSet">隱私設定</a></li>
 						</ul>
 					</li>
-					<li><a href="/sign_in">登入</a></li>
-					<li><a href="/sign_out">登出</a></li>
+					<!--<li><a href="/user/login">登入</a></li>-->
+					<li><a href="/user/logout">登出</a></li>
 				</ul>
 			</li>
-			<li>
+			<li class="current">
 				<a href="bookcase">書櫃</a>
 				<ul>
 					<li><a href="bookcase">個人書櫃</a></li>
@@ -56,54 +56,36 @@
 					<li><a href="newnote">新增手帳</a></li>
 				</ul>
 			</li>
-			<li><a href="/sign_up" class="button">註冊</a></li>
+			<li><a href="/member/add/form" class="button">註冊</a></li>
 		</ul>
 	</nav>
 	<div class="container">
 		<br><br>
-		<div class="bookcase-lable">
-				<h2>鳥</h2>
-			</div>
-		<div><select class="form-select">
-				<option selected>默認</option>
-				<option value="1">日期</option>
-				<option value="2">書櫃</option>
-			</select></div>
 		<br>
-		<table>
+		<h2><%= items[0].jouname %>	</h2>
+		
+		<table class="table">
 			<thead>
 				<tr>
-					<th>頁碼</th>
-					<th>日期</th>
-					<th>書櫃</th>
-					<th>標籤</th>
+					<th width="30%">建立日期</th>
+					<th width="70%">標題</th>
 				</tr>
-				<thead>
-				<tbody>
-					<tr>
-						<td>1</td>
-						<td>110.3.27</td>
-						<td>預設書櫃</td>
-						<td><i class="fas fa-hashtag">翠鳥</i></td>
-					</tr>
-					<tr>
-						<td>2</td>
-						<td>110.4.1</td>
-						<td>預設書櫃</td>
-						<td><i class="fas fa-hashtag">玄鳳鸚鵡</i></td>
-					</tr>
-					<tr>
-						<td>3</td>
-						<td>110.4.4</td>
-						<td>預設書櫃</td>
-						<td><i class="fas fa-hashtag">貓頭鷹</i></td>
-					</tr>
-				</tbody>
+			</thead>
+			<% for(i=0; i<items.length; i++) {%>
+				<tr>
+					<td><%= moment(items[i].createdate).format("YYYY-MM-DD"); %></td>
+					<td><%= items[i].title1 %></td>
+				</tr>
+			<% } %>
 		</table>
-		<div align="center"><button onClick="add-book-button" style="width:60%;height:4em;font-size: 1.5em;"><i
-					class="fas fa-plus-circle">
+
+		<div align="center">
+			<button onClick="add-book-button" style="width:60%;height:4em;font-size: 1.5em;">
+				<i class="fas fa-plus-circle">
 					<h4>新增頁面</h4>
-				</i></button></div><br>
+				</i>
+			</button>
+		</div><br>
 	</div>
 
 

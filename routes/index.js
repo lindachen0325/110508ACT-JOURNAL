@@ -6,26 +6,6 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.get('/sign_up', function(req, res, next) {
-  res.render('sign_up', { title: 'Express' });
-});
-
-router.get('/sign_in', function(req, res, next) {
-  res.render('sign_in', { title: 'Express' });
-});
-
-router.get('/myJournals', function(req, res, next) {
-  res.render('myJournals', { title: 'myJournals' });
-});
-
-router.get('/sign_out', function(req, res, next) {
-  res.render('sign_out', { title: 'Express' });
-});
-
-router.get('/bookcase', function(req, res, next) {
-  res.render('bookcase', { title: 'Express' });
-});
-
 router.get('/newbookshelf', function(req, res, next) {
   res.render('newbookshelf', { title: 'Express' });
 });
@@ -52,18 +32,6 @@ router.get('/profileEdit', function(req, res, next) {
 
 router.get('/privateSet', function(req, res, next) {
   res.render('privateSet', { title: 'privateSet' });
-});
-
-router.get('/journals', function(req, res, next) {
-  res.render('journals', { title: 'journals' });
-});
-
-router.get('/templets', function(req, res, next) {
-  res.render('templets', { title: 'templets' });
-});
-
-router.get('/material', function(req, res, next) {
-  res.render('material', { title: 'material' });
 });
 
 router.get('/drawingboard', function(req, res, next) {
