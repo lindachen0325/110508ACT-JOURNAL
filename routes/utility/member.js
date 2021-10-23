@@ -1,6 +1,7 @@
 'use strict';
 
 //引用操作資料庫的物件
+var moment = require('moment');
 const sql = require('./asyncDB');
 
 //------------------------------------------
@@ -16,6 +17,23 @@ var add = async function(newData){
         }, (error) => {
             result = -1;
         });
+    console.log('***1');
+    await sql('select * from member where email=$1',[newData.email])
+        .then((data) => {
+            result = data.rows;
+        }, (error) => {
+            result = null;
+        });
+    console.log('***2');
+    console.log(result);
+    await sql('INSERT INTO bookshelf (bsfname, createdate, privatest, memno) VALUES ($1, $2, $3, $4)', ['預設', moment().format("YYYY-MM-DD"), '0',result[0].memno])
+        .then((data) => {
+            result = 0;  
+        }, (error) => {
+            result = -1;
+        });
+    console.log('***3');
+
 		
     return result;
 }
