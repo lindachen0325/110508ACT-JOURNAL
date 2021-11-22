@@ -8,6 +8,16 @@ var logger = require('morgan');
 //------------------------------------------------------------
 var session = require('express-session');
 
+var bookshelf_update_name = require('./routes/bookshelf_update_name');
+var bookshelf_update_form = require('./routes/bookshelf_update_form');
+var bookshelf_update = require('./routes/bookshelf_update');
+var journal_add_form = require('./routes/journal_add_form');
+var journal_add = require('./routes/journal_add');
+var bookshelf_remo_form = require('./routes/bookshelf_remo_form');
+var bookshelf_remo = require('./routes/bookshelf_remo');
+var bookshelf_add_form = require('./routes/bookshelf_add_form');
+var bookshelf_add = require('./routes/bookshelf_add');
+
 var journallist = require('./routes/bookshelf_journal');
 var pagelist = require('./routes/journal_page');
 var member_add_form = require('./routes/member_add_form');
@@ -55,7 +65,12 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-
+//----------------------------------------
+// 可由外部直接取用資料夾
+//----------------------------------------
+app.use(express.static('public/photo'));
+app.use(express.static('public/picture'));
+//-----------------------------------------
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -74,6 +89,16 @@ app.use('/users', usersRouter);
 //-----------------------------------------
 // 設定模組使用方式
 //-----------------------------------------
+app.use('/bookshelf/update/name',checkAuth , bookshelf_update_name);
+app.use('/bookshelf/update/form',checkAuth , bookshelf_update_form);
+app.use('/bookshelf/update',checkAuth , bookshelf_update);
+app.use('/journal/add/form',checkAuth , journal_add_form);
+app.use('/journal/add',checkAuth , journal_add);
+app.use('/bookshelf/remo/form',checkAuth , bookshelf_remo_form);
+app.use('/bookshelf/remo',checkAuth , bookshelf_remo);
+app.use('/bookshelf/add/form',checkAuth , bookshelf_add_form);
+app.use('/bookshelf/add',checkAuth , bookshelf_add);
+
 app.use('/bookcase',checkAuth , journallist);
 app.use('/myJournals',checkAuth , pagelist);
 app.use('/member/add/form', member_add_form);

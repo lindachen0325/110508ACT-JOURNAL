@@ -17,14 +17,14 @@
 		<nav id="nav">
 			<ul><a href="/" id="logo">ACT JOURNAL</a>
 				<li class="current"><a href="/">首頁</a></li>
-				<!--<li>
+				<li>
 					<a href="material">素材庫</a>
 					<ul>
 						<li><a href="templets">模板</a></li>
-						
+
 						<li><a href="material">素材</a></li>
 					</ul>
-				</li>-->
+				</li>
 				<li>
 					<a href="following">追蹤名單</a>
 					<ul>
@@ -41,7 +41,7 @@
 							<a href="profile">查看個人檔案</a>
 							<ul>
 								<li><a href="profileEdit">編輯簡介</a></li>
-								<!--<li><a href="privateSet">隱私設定</a></li>-->
+								<li><a href="privateSet">隱私設定</a></li>
 							</ul>
 						</li>
 						<!--<li><a href="/sign_in">登入</a></li>-->
@@ -66,28 +66,35 @@
 				<div class="section-heading">
 					<h2>新增手帳</h2>
 				</div>
-
 				<div class="col-md-8">
-
-					<form action="#" method="post">
-						<input name="value" type="text" class="form-control" placeholder="輸入手帳名稱" maxlength="45"
-							height="200px" required="">
+					<form action="/journal/add" method="post">
+						<div class="form">
+							<span class="value"><input type="text" class="form-control" name="jouname"
+									placeholder="輸入書櫃名稱"></span>
+							<br>
+							<span class="name">選擇要放進的書櫃名稱: </span>
+							<br>
+							<span class="value">
+								<select name="bsfno">
+									<% for(var i=0; i<result.bookshelf.length; i++) {%>
+										<option value="<%= result.bookshelf[i].bsfno %>">
+											<%= result.bookshelf[i].bsfname %>
+										</option>
+										<% } %>
+								</select>
+							</span>
+							<br>
+							<span class="name">上傳封面圖片</span>
+							<span class="value"><input type="file" name="photo" /></span>
+							<br>
+							<span class="name"></span>
+							<span class="value"><input type="submit" value="確認"></span>
+						</div>
 					</form>
 
+
 				</div>
-				<br><br>
-				<div class="section-heading">
-					<h2>上傳圖片</h2>
-				</div>
-				<div class="col-md-8">
-					<div class="contact-form">
-						<form action="#" method="post">
-							<span class="value"><input type="file" name="uppicture" /></span>
-							<br><br>
-							<button type="submit" id="form-submit" class="value">新增</button>
-						</form>
-					</div>
-				</div>
+
 			</div>
 		</div>
 

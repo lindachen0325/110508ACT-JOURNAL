@@ -6,14 +6,6 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.get('/newbookshelf', function(req, res, next) {
-  res.render('newbookshelf', { title: 'Express' });
-});
-
-router.get('/newnote', function(req, res, next) {
-  res.render('newnote', { title: 'newnote' });
-});
-
 router.get('/drawingboard', function(req, res, next) {
   res.render('drawingboard', { title: 'drawingboard' });
 });

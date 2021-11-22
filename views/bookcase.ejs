@@ -48,12 +48,14 @@
 				</ul>
 			</li>
 			<li class="current">
-				<a href="bookcase">書櫃</a>
-				<ul>
-					<li><a href="bookcase">個人書櫃</a></li>
-					<li><a href="newbookshelf">新增書櫃</a></li>
-					<li><a href="newnote">新增手帳</a></li>
-				</ul>
+				<a>書櫃</a>
+                    <ul>
+                        <li><a href="/bookcase">個人書櫃</a></li>
+                        <li><a href="/bookshelf/add/form">新增書櫃</a></li>
+                        <li><a href="/bookshelf/remo/form">刪除書櫃</a></li>
+                        <li><a href="/bookshelf/update/name">更新書櫃</a></li>
+                        <li><a href="/journal/add/form">新增手帳</a></li>
+                    </ul>
 			</li>
 			<li><a href="/member/add/form" class="button">註冊</a></li>
 		</ul>
@@ -82,7 +84,7 @@
 				<% } %>
 			</div>
 
-			<a href="/newnote">
+			<a href="/journal/add/form">
 				<div align="center"><button onClick="add-book-button" style="width:60%;height:4em;font-size: 1.5em;">
 						<i class="fas fa-plus-circle">
 							<h4>新增手帳</h4>
@@ -94,7 +96,7 @@
 
 	<br>
 	<h2 class="major"></h2>
-	<a href="newbookshelf">
+	<a href="/bookshelf/add/form">
 		<div align="center"><button onClick="add-book-button" style="width:60%;height:4em;font-size: 2em;">
 				<i class="fas fa-plus-circle">
 					<h4>新增書櫃</h4>

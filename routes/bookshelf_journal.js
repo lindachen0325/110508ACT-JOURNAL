@@ -19,8 +19,6 @@ router.get('/', function(req, res, next) {
                 }
             }
             username = []
-            //req.session.memno = data.memno;
-            //req.session.email = data.email;
             username= req.session.username;
             res.render('bookcase', {items:data, bsfnames:names,username:username});//將資料傳給顯示頁面
         }else{
