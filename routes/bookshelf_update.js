@@ -16,9 +16,9 @@ router.post('/', function(req, res, next) {
     
     bookshelf.update(newData,no,bsfno).then(d => {
         if (d>=0){
-            res.render('Success', {results:d});  //傳至成功頁面
+            res.render('success', {results:d});  //傳至成功頁面
         }else{
-            res.render('Fail');     //導向錯誤頁面
+            res.render('fail');     //導向錯誤頁面
         }  
     })
 });

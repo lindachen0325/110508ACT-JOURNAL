@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
         if (d!=[]){
             res.render('bookshelf_remo_form', {result:d});  //轉至新增頁面
         }else{
-            res.render('Fail');     //導向錯誤頁面
+            res.render('fail');     //導向錯誤頁面
         }  
     });
 });

@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
         if (d!=[]){
             res.render('journal_add_form', {result:d});  //轉至新增頁面
         }else{
-            res.render('addFail');     //導向錯誤頁面
+            res.render('fail');     //導向錯誤頁面
         }  
     });
 });
