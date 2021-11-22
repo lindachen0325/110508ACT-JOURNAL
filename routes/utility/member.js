@@ -38,5 +38,25 @@ var add = async function(newData){
     return result;
 }
 
+//------------------------------------------
+//執行資料庫動作的函式-取出單一商品  #後端用
+//------------------------------------------
+var query = async function(memno){
+    var result={};
+    
+    await sql('SELECT * FROM member WHERE memno = $1', [memno])
+        .then((data) => {
+            if(data.rows.length > 0){
+                result = data.rows[0];   
+            }else{
+                result = -1;
+            }    
+        }, (error) => {
+            result = null;
+        });
+		
+    return result;
+}
+
 //匯出
-module.exports = {add};
+module.exports = {add, query};

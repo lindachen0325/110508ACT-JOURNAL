@@ -1,0 +1,169 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>ACT JOURNAL</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/css/main.css">
+	<link rel="stylesheet" href="/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/flexslider.css">
+	<link rel="stylesheet" href="/css/templatemo-style.css">
+	
+</head>
+
+<body class="homepage is-preload">
+	<div id="page-wrapper">
+		<!-- Nav -->
+		<nav id="nav">
+			<ul><a href="/" id="logo">ACT JOURNAL</a>
+
+				<li class="current"><a href="/mindex">首頁</a></li>
+				<li>
+					<a href="#">管理員</a>
+					<ul>
+						<li><a href="/man/add/form">新增管理員</a></li>
+						<li><a href="/manager/remove/form">刪除管理員</a></li>
+						 
+					</ul>
+				</li>
+				<li>
+					<a href="#">會員管理</a>
+					<ul>
+						<li><a href="/member/query/form">查詢會員</a></li>
+						<li><a href="/member/remove/form">刪除會員</a></li>
+						 
+					</ul>
+				</li>
+				<li>
+					<a href="#">手帳管理</a>
+					<ul>
+						<li><a href="/journal/query/form">查詢手帳</a></li>
+						<li><a href="/journal/remove/form">刪除手帳</a></li>
+						 
+					</ul>
+				</li>
+				<li>
+					<a href="#">素材管理</a>
+					<ul>
+						<li><a href="/material/add/form">新增素材</a></li>
+						<li><a href="/material/query/form">查詢素材</a></li>
+						<li><a href="/material/remove/form">刪除素材</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">書櫃</a>
+					<ul>
+						<li><a href="/bookshelf/query/form">書櫃查詢</a></li>	
+						<li><a href="/bookshelf/remove/form">書櫃刪除</a></li>					
+					</ul>
+				</li>
+				<!-- <li><a href="/sign_in">登入</a></li> -->
+				<li><a href="/man/logout">登出</a></li>
+				
+		</nav>
+		<!-- Banner -->
+
+		<br>
+		<div class="box-user">
+			<span class="line"></span>
+			<span class="text">
+				<div class="send-message">
+					<div class="section-heading">
+						<h2>書櫃資訊</h2>
+
+                        <table>
+                            <tr>
+                                <td width="25%">書櫃編號</td>
+                                <td><%= item.bsfno %></td>
+                            </tr>
+                            <tr>
+                                <td>書櫃名稱</td>
+                                <td><%= item.bsfname %></td>
+                            </tr>
+                            <tr>
+                                <td>隱私設定</td>
+                                <td><%= item.privatest %></td>
+                            </tr>
+                            <tr>
+                                <td>會員編號</td>
+                                <td><%= item.memno %></td>
+                            </tr>
+                            <tr>
+                                <td>創建日期</td>
+                                <td><%= item.createdate %></td>
+                            </tr>  
+                            <tr>
+                                <td>書櫃封面</td>
+                                <td><img src='<%= item.photo %>'></td>
+                            </tr>                                                                                                                               
+                        </table>
+									</form>								
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+		</span>
+	</div>
+					<!--navbar外掛-->
+					
+					<script src="/js/jquery.min.js"></script>
+					<script src="/js/jquery.dropotron.min.js"></script>
+					<script src="/js/util.js"></script>
+					<script src="/js/jquery.scrolly.min.js"></script>
+					<script src="/js/breakpoints.min.js"></script>
+					<script src="/js/main.js"></script>
+					<!-- banner 外掛 -->
+					<script src="/js/jquery-1.11.2.min.js"></script>
+					<script src="/js/jquery.flexslider-min.js"></script>
+					<script src="/js/templatemo-script.js"></script>
+					<script src="/js/moment.js"></script>
+					<script src="/js/bootstrap.min.js"></script>
+
+					<script>
+						// HTML document is loaded. DOM is ready.
+						$(function () {
+
+							$('#hotelCarTabs a').click(function (e) {
+								e.preventDefault()
+								$(this).tab('show')
+							})
+
+							$('.date').datetimepicker({
+								format: 'MM/DD/YYYY'
+							});
+							$('.date-time').datetimepicker();
+
+							// https://css-tricks.com/snippets/jquery/smooth-scrolling/
+							$('a[href*=#]:not([href=#])').click(function () {
+								if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+									var target = $(this.hash);
+									target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+									if (target.length) {
+										$('html,body').animate({
+											scrollTop: target.offset().top
+										}, 1000);
+										return false;
+									}
+								}
+							});
+						});
+
+						// Load Flexslider when everything is loaded.
+						$(window).load(function () {
+							// Vimeo API nonsense
+
+
+							//	For images only
+							$('.flexslider').flexslider({
+								controlNav: false
+							});
+
+
+						});
+					</script>
+
+</body>
+
+</html>

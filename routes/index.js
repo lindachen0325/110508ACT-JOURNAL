@@ -14,26 +14,6 @@ router.get('/newnote', function(req, res, next) {
   res.render('newnote', { title: 'newnote' });
 });
 
-router.get('/following', function(req, res, next) {
-  res.render('following', { title: 'following' });
-});
-
-router.get('/follower', function(req, res, next) {
-  res.render('follower', { title: 'follower' });
-});
-
-router.get('/profile', function(req, res, next) {
-  res.render('profile', { title: 'profile' });
-});
-
-router.get('/profileEdit', function(req, res, next) {
-  res.render('profileEdit', { title: 'profileEdit' });
-});
-
-router.get('/privateSet', function(req, res, next) {
-  res.render('privateSet', { title: 'privateSet' });
-});
-
 router.get('/drawingboard', function(req, res, next) {
   res.render('drawingboard', { title: 'drawingboard' });
 });
@@ -41,6 +21,31 @@ router.get('/drawingboard', function(req, res, next) {
 router.get('/draw', function(req, res, next) {
   res.render('draw', { title: 'draw' });
 });
+
+router.get('/', function(req, res, next) {
+  res.render('man_login_form', { title: 'Express' });
+});
+
+router.get('/man_login_form', function(req, res, next) {
+  res.render('man_login_form', { title: 'man_login_form' });
+});
+
+router.get('/success', function(req, res, next) {
+  res.render('success', { title: 'success' });
+});
+
+router.get('/fail', function(req, res, next) {
+  res.render('fail', { title: 'fail' });
+});
+
+router.get('/material/add/form', function(req, res, next) {
+  res.render('material_add_form', { title: 'material_add_form' });
+});
+
+router.get('/mindex', function(req, res, next) {
+  res.render('mindex', { title: 'mindex' });
+});
+
 
 module.exports = router;
 

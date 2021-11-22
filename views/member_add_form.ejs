@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="/css/bootstrap.min.css">
 	<link rel="stylesheet" href="/css/flexslider.css">
 	<link rel="stylesheet" href="/css/templatemo-style.css">
-	
+
 </head>
 
 <body class="homepage is-preload">
@@ -18,15 +18,15 @@
 		<nav id="nav">
 			<ul><a href="/" id="logo">ACT JOURNAL</a>
 				<li class="current"><a href="/">首頁</a></li>
-				<li>
+				<!--<li>
 					<a href="/material">素材庫</a>
 					<ul>
 						<li><a href="/templets">模板</a></li>
-						
+
 						<li><a href="/material">素材</a></li>
 					</ul>
-				</li>
-				<!--<li>
+				</li>-->
+				<li>
 					<a href="following">追蹤名單</a>
 					<ul>
 						<li><a href="following">追蹤中</a></li>
@@ -40,7 +40,7 @@
 							<a href="profile">查看個人檔案</a>
 							<ul>
 								<li><a href="profileEdit">編輯簡介</a></li>
-								<li><a href="privateSet">隱私設定</a></li>
+								<!--<li><a href="privateSet">隱私設定</a></li>-->
 							</ul>
 						</li>
 						<li><a href="/user/login/form">登入</a></li>
@@ -60,107 +60,117 @@
 		</nav>
 		<!-- Banner -->
 		<br>
-		<div class="box-user">
-			<span class="line"></span>
-			<span class="text">
-				<div class="send-message">
-					<div class="section-heading">
-						<h2>註冊新帳號</h2>
-					</div>
+		<br>
+		<section id="main">
+			<div class="container">
+				<div class="box-user">
+					<span class="line"></span>
+					<span class="text">
+						<div class="send-message">
+							<div class="section-heading">
+								<h2>註冊新帳號</h2>
+							</div>
 
-					<div class="col-md-8">
-						<div class="contact-form">
-							<form action = "/member/add" method="post">
-								<div class="form">
-									<div class="form">
-										<!--<span class="name">帳號</span>
+							<div class="col-md-8">
+								<div class="contact-form">
+									<form action="/member/add" method="post">
+										<div class="form">
+											<div class="form">
+												<!--<span class="name">帳號</span>
 										<span class="value"><input type="text" class="form-control" name="memno" required=""></span>
 										<br/>-->
-										<span class="name">帳號</span>
-										<span class="value"><input type="text" class="form-control" name="email" placeholder="請輸入您的電子郵件位址"></span>
-										<br/>
-										<span class="name">密碼 </span>
-										<span class="value"><input type="password" class="form-control" name="password" required=""></span>
-										<br/>
-										<span class="name">生日</span>
-										<input name="birthday" type="date" class="form-control" id="birthday" placeholder="生日" required="">
-										<br/>
-										<span class="name">暱稱</span>
-										<span class="value"><input type="text" class="form-control" name="username" required=""></span>
-										<br/>
-										<span class="name">隱私設定(可隨時修改)</span>
-										<span class="value"><input type="text" class="form-control" name="privateset" required=""></span>
-										<br/>
-										<span class="name"></span>
-										<span class="value"><input type="submit" value="確認" ></span>    
-										</div>    
-									</form>								
+												<span class="name">帳號</span>
+												<span class="value"><input type="text" class="form-control" name="email"
+														placeholder="請輸入您的電子郵件位址"></span>
+												<br />
+												<span class="name">密碼 </span>
+												<span class="value"><input type="password" class="form-control"
+														name="password" required=""></span>
+												<br />
+												<span class="name">生日</span>
+												<input name="birthday" type="date" class="form-control" id="birthday"
+													placeholder="生日" required="">
+												<br />
+												<span class="name">暱稱</span>
+												<span class="value"><input type="text" class="form-control"
+														name="username" required=""></span>
+												<br />
+												<span class="name">隱私設定(可隨時修改)</span>
+												<span class="value"><input type="text" class="form-control"
+														name="privateset" required=""></span>
+												<br />
+												<span class="name"></span>
+												<span class="value"><input type="submit" value="確認"></span>
+											</div>
+										</div>
+									</form>
 								</div>
-							</form>
+								</form>
+							</div>
 						</div>
-					</div>
 				</div>
-		</span>
+				</span>
+			</div>
+		</section>
 	</div>
-					</div>
 
-					<!--navbar外掛-->
-					
-					<script src="/js/jquery.min.js"></script>
-					<script src="/js/jquery.dropotron.min.js"></script>
-					<script src="/js/util.js"></script>
-					<script src="/js/jquery.scrolly.min.js"></script>
-					<script src="/js/breakpoints.min.js"></script>
-					<script src="/js/main.js"></script>
-					<!-- banner 外掛 -->
-					<script src="/js/jquery-1.11.2.min.js"></script>
-					<script src="/js/jquery.flexslider-min.js"></script>
-					<script src="/js/templatemo-script.js"></script>
-					<script src="/js/moment.js"></script>
-					<script src="/js/bootstrap.min.js"></script>
+	<!--navbar外掛-->
 
-					<script>
-						// HTML document is loaded. DOM is ready.
-						$(function () {
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/jquery.dropotron.min.js"></script>
+	<script src="/js/util.js"></script>
+	<script src="/js/jquery.scrolly.min.js"></script>
+	<script src="/js/breakpoints.min.js"></script>
+	<script src="/js/main.js"></script>
+	<!-- banner 外掛 -->
+	<script src="/js/jquery-1.11.2.min.js"></script>
+	<script src="/js/jquery.flexslider-min.js"></script>
+	<script src="/js/templatemo-script.js"></script>
+	<script src="/js/moment.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
 
-							$('#hotelCarTabs a').click(function (e) {
-								e.preventDefault()
-								$(this).tab('show')
-							})
+	<script>
+		// HTML document is loaded. DOM is ready.
+		$(function () {
 
-							$('.date').datetimepicker({
-								format: 'MM/DD/YYYY'
-							});
-							$('.date-time').datetimepicker();
+			$('#hotelCarTabs a').click(function (e) {
+				e.preventDefault()
+				$(this).tab('show')
+			})
 
-							// https://css-tricks.com/snippets/jquery/smooth-scrolling/
-							$('a[href*=#]:not([href=#])').click(function () {
-								if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-									var target = $(this.hash);
-									target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-									if (target.length) {
-										$('html,body').animate({
-											scrollTop: target.offset().top
-										}, 1000);
-										return false;
-									}
-								}
-							});
-						});
+			$('.date').datetimepicker({
+				format: 'MM/DD/YYYY'
+			});
+			$('.date-time').datetimepicker();
 
-						// Load Flexslider when everything is loaded.
-						$(window).load(function () {
-							// Vimeo API nonsense
+			// https://css-tricks.com/snippets/jquery/smooth-scrolling/
+			$('a[href*=#]:not([href=#])').click(function () {
+				if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+					var target = $(this.hash);
+					target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+					if (target.length) {
+						$('html,body').animate({
+							scrollTop: target.offset().top
+						}, 1000);
+						return false;
+					}
+				}
+			});
+		});
 
-
-							//	For images only
-							$('.flexslider').flexslider({
-								controlNav: false
-							});
+		// Load Flexslider when everything is loaded.
+		$(window).load(function () {
+			// Vimeo API nonsense
 
 
-						});
-					</script>
+			//	For images only
+			$('.flexslider').flexslider({
+				controlNav: false
+			});
+
+
+		});
+	</script>
 
 </body>
 
