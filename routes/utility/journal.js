@@ -31,7 +31,6 @@ var getDropdownData = async function () {
 var addbsfjou = async function (newData,no) {
     var result;
 
-
     await sql('INSERT INTO journal (jouname,createdate,memno,photo) VALUES ($1, $2, $3, $4)', [newData.jouname, moment().format("YYYY-MM-DD"), no, newData.photo])
         .then((data) => {
             result = 0;
@@ -40,7 +39,8 @@ var addbsfjou = async function (newData,no) {
         });
 
     console.log(no);
-    await sql('select jouname,jouno from journal where memno = $1 order by jouno desc ', [no])
+
+    await sql('select jouname,jouno,photo from journal where memno = $1 order by jouno desc ', [no])
         .then((data) => {
             result = data.rows;
             //jno=result
@@ -49,9 +49,11 @@ var addbsfjou = async function (newData,no) {
         }, (error) => {
             result = null;
         });
-    
+
+    console.log(newData.photo);
     console.log(newData.bsfno);
     console.log(jno);
+
     await sql('INSERT INTO bookshelf_journal (bsfno,jouno) VALUES ($1, $2)', [newData.bsfno, jno])
         .then((data) => {
             result = 0;

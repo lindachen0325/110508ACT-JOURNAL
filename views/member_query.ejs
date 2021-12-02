@@ -19,12 +19,13 @@
 			<ul><a href="/" id="logo">ACT JOURNAL</a>
 
 				<li class="current"><a href="/mindex">首頁</a></li>
-				<a href="#">管理員</a>
-				<ul>
-					<li><a href="/man/add/form">新增管理員</a></li>
-					<li><a href="/manager/remove/form">刪除管理員</a></li>
+				<li>
+					<a href="#">管理員</a>
+					<ul>
+						<li><a href="/man/add/form">新增管理員</a></li>
+						<li><a href="/manager/remove/form">刪除管理員</a></li>
 
-				</ul>
+					</ul>
 				</li>
 				<li>
 					<a href="#">會員管理</a>
@@ -57,7 +58,6 @@
 						<li><a href="/bookshelf/remove/form">書櫃刪除</a></li>
 					</ul>
 				</li>
-				<!-- <li><a href="/sign_in">登入</a></li> -->
 				<li><a href="/man/logout">登出</a></li>
 
 		</nav>
@@ -96,12 +96,6 @@
 										<td>會員暱稱</td>
 										<td>
 											<%= item.username %>
-										</td>
-									</tr>
-									<tr>
-										<td>隱私設定</td>
-										<td>
-											<%= item.privateset %>
 										</td>
 									</tr>
 									<tr>

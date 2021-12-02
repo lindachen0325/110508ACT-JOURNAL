@@ -9,16 +9,14 @@ router.post('/', function(req, res, next) {
     var password = req.body.password;
     var email = req.body.email;
     var birthday = req.body.birthday;
-    var username = req.body.username;            
-    var privateset=req.body.privateset;
+    var username = req.body.username;
     
     // 建立一個新資料物件
     var newData={
         password:password,
         email:email,
         birthday:birthday,
-        username:username,
-        privateset:privateset
+        username:username
     } 
     
     member.add(newData).then(d => {

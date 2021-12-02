@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+
 //------------------------------------------------------------
 // 增加引用模組
 //------------------------------------------------------------
@@ -17,7 +18,6 @@ var bookshelf_remo_form = require('./routes/bookshelf_remo_form');
 var bookshelf_remo = require('./routes/bookshelf_remo');
 var bookshelf_add_form = require('./routes/bookshelf_add_form');
 var bookshelf_add = require('./routes/bookshelf_add');
-
 var journallist = require('./routes/bookshelf_journal');
 var pagelist = require('./routes/journal_page');
 var member_add_form = require('./routes/member_add_form');
@@ -30,6 +30,10 @@ var checkAuth = require('./routes/checkAuth');
 //------------------------------------------------------------
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var myprofile = require('./routes/myprofile');
+var profileEdit = require('./routes/profileEdit');
+var following = require('./routes/following');
+var follower = require('./routes/follower');
 //加入newbookshelf
 //var newbookshelf = require('./routes/newbookshelf');
 //-----back---------------------------------------------
@@ -76,12 +80,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(__dirname + '/public'));  //to use style.css
 app.use(session({secret: 'cute', cookie: { maxAge: 60000 }}));
 app.use(express.static(path.join(__dirname, 'img')));
 app.use('/img', express.static('img'));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-
 //加入newbookshelf
 //app.use('/newbookshelf', newbookshelf);
 //-----------------------------------------
@@ -98,7 +102,6 @@ app.use('/bookshelf/remo/form',checkAuth , bookshelf_remo_form);
 app.use('/bookshelf/remo',checkAuth , bookshelf_remo);
 app.use('/bookshelf/add/form',checkAuth , bookshelf_add_form);
 app.use('/bookshelf/add',checkAuth , bookshelf_add);
-
 app.use('/bookcase',checkAuth , journallist);
 app.use('/myJournals',checkAuth , pagelist);
 app.use('/member/add/form', member_add_form);
@@ -107,6 +110,10 @@ app.use('/user/login/form', user_login_form);
 app.use('/user/login', user_login);
 app.use('/user/logout', user_logout);
 app.use('/user/show',checkAuth , user_show);
+app.use('/myprofile',checkAuth, myprofile);
+app.use('/profileEdit',checkAuth, profileEdit);
+app.use('/following',checkAuth, following);
+app.use('/follower',checkAuth, follower);
 //----back-------------------------------------
 app.use('/man/login/form', man_login_form);
 app.use('/man/login', man_login);

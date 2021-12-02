@@ -10,7 +10,7 @@ const sql = require('./asyncDB');
 var add = async function(newData){
     var result;
 
-    await sql('INSERT INTO member (password, email, birthday, username, privateset) VALUES ($1, $2, $3, $4, $5)', [newData.password, newData.email, newData.birthday,newData.username, newData.privateset])
+    await sql('INSERT INTO member (password, email, birthday, username) VALUES ($1, $2, $3, $4)', [newData.password, newData.email, newData.birthday,newData.username])
         .then((data) => {
             result = 0;  
         }, (error) => {
@@ -24,7 +24,7 @@ var add = async function(newData){
             result = null;
         });
 
-    await sql('INSERT INTO bookshelf (bsfname, createdate, privatest, memno) VALUES ($1, $2, $3, $4)', ['預設', moment().format("YYYY-MM-DD"), '0',result[0].memno])
+    await sql('INSERT INTO bookshelf (bsfname, createdate, memno) VALUES ($1, $2, $3)', ['預設', moment().format("YYYY-MM-DD"),result[0].memno])
         .then((data) => {
             result = 0;  
         }, (error) => {

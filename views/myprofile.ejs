@@ -33,13 +33,13 @@
 					</ul>
 				</li>
 				<li>
-					<a href="profile">使用者</a>
+					<a href="myprofile">使用者</a>
 					<ul>
 						<li>
-							<a href="profile">查看個人檔案</a>
+							<a href="myprofile">查看個人檔案</a>
 							<ul>
 								<li><a href="profileEdit">編輯簡介</a></li>
-								<!--<li><a href="privateSet">隱私設定</a>--></li>
+								</li>
 							</ul>
 						</li>
 						<!--<li><a href="/sign_in">登入</a></li>-->
@@ -62,13 +62,12 @@
 			<h2 id="p" class="major"><span>個人檔案</span></h2>
 			<form id="profile">
 				<div id="left">
-					<img src="/img/profile.jpg"></img>
-					<div id="btnEdit"><input type="button" value="編輯個人資料" ;onclick="" ;></div>
+					<img src="<%= item.photo %>"></img>
+					<a href="/profileEdit"><div id="btnEdit"><input type="button" value="編輯個人資料" onclick="" ></div></a>
 				</div>
 				<div id="right">
-					<span id="userID">kimheenim</span>
-					<span id="name">김희철 </span>
-					<span id="bio">우주대스타🍒🐱🐶💙</span>
+					<span id="name"><%= item.username %> </span>
+					<span id="bio"><%= item.bio %></span>
 				</div>
 			</form>
 		</div>
