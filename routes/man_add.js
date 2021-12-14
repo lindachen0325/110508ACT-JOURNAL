@@ -21,9 +21,9 @@ router.post('/', function(req, res, next) {
     
     manadd.add(newData).then(d => {
         if (d==0){
-            res.render('success');  //傳至成功頁面
+            res.render('msuccess');  //傳至成功頁面
         }else{
-            res.render('fail');     //導向錯誤頁面
+            res.render('mfail');     //導向錯誤頁面
         }  
     })
 });

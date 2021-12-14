@@ -81,7 +81,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(__dirname + '/public'));  //to use style.css
-app.use(session({secret: 'cute', cookie: { maxAge: 60000 }}));
+app.use(session({secret: 'cute', cookie: { maxAge: 600000 }}));
 app.use(express.static(path.join(__dirname, 'img')));
 app.use('/img', express.static('img'));
 app.use('/', indexRouter);

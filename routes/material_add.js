@@ -52,10 +52,10 @@ router.post('/', upload.single('material'), function(req, res, next) {
     // 新增素材
     mat.matadd(newData).then(d => {
         if (d==0){
-            res.render('success');  //傳至成功頁面
+            res.render('msuccess');  //傳至成功頁面
         }else{
             sign=1;
-            res.render('fail');     //導向錯誤頁面
+            res.render('mfail');     //導向錯誤頁面
         }  
     })
 

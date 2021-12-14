@@ -30,6 +30,13 @@ router.get('/fail', function(req, res, next) {
   res.render('fail', { title: 'fail' });
 });
 
+router.get('/msuccess', function(req, res, next) {
+  res.render('msuccess', { title: 'msuccess' });
+});
+
+router.get('/mfail', function(req, res, next) {
+  res.render('mfail', { title: 'mfail' });
+});
 router.get('/material/add/form', function(req, res, next) {
   res.render('material_add_form', { title: 'material_add_form' });
 });
