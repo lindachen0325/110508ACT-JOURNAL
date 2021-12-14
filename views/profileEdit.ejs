@@ -39,7 +39,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="/myprofile"><%= username %>您好</a>
+                    <a href="/myprofile">使用者</a>
                     <ul>
                         <li>
                             <a href="/myprofile">查看個人檔案</a>
@@ -56,13 +56,13 @@
 		<!-- Main -->
 		<div id="main" class="m">
 			<h2 id="p" class="major"><span>個人檔案</span></h2>
-			<form id="profile">
+			<form id="profile" action="/profileEdit" method="get">
 				<div id="left">
 					<img src="<%= item.photo %>"></img>
 				</div>
 				<div id="right" action="/profile/profileEdit" >
-					<span id="name"><input type="text" value="<%= item.username %>"></span>
-					<span id="bio"><input type="text" value="<%= item.bio %>"></span>
+					<span id="name"><input type="text" placeholder="" value="<%= item.username %>"></span>
+					<span id="bio"><input type="text" placeholder="" value="<%= item.bio %>"></span>
 					<div id="editSubmit"><input type="submit" value="確定修改"></div>
 				</div>
 			</form>
