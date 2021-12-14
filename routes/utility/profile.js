@@ -40,7 +40,7 @@ var myprofile = async function(no){
 //------------------------------------------
 //更新個人資料
 //------------------------------------------
-var profileEdit = async function(no){
+/*var profileEdit = async function(no){
     var results;
 
     await sql('UPDATE member SET username=$1, bio=$2 where memno=$3', [newData.username, newData.bio, no])
@@ -51,8 +51,8 @@ var profileEdit = async function(no){
         });
 		
     return results;
-}
-/*
+}*/
+
 var profileEdit = async function(no){
     var result={};
 	
@@ -68,5 +68,5 @@ var profileEdit = async function(no){
     });
 	console.log(no);
     return result;
-}*/
+}
 module.exports = {fetchAllProfile, myprofile, profileEdit}
