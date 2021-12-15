@@ -10,9 +10,9 @@ router.post('/', function(req, res, next) {
    
     removejou.remove(jouno).then(d => {
         if(d>=0){
-            res.render('msuccess', {results:d});  //傳至成功頁面     
+            res.render('removeSuccess', {results:d});  //傳至成功頁面     
         }else{
-            res.render('mfail');     //導向錯誤頁面
+            res.render('removeFail');     //導向錯誤頁面
         }
     })    
 });

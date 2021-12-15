@@ -37,6 +37,15 @@ router.get('/msuccess', function(req, res, next) {
 router.get('/mfail', function(req, res, next) {
   res.render('mfail', { title: 'mfail' });
 });
+
+router.get('/removeSuccess', function(req, res, next) {
+  res.render('removeSuccess', { title: 'removeSuccess' });
+});
+
+router.get('/removeFail', function(req, res, next) {
+  res.render('removeFail', { title: 'removeFail' });
+});
+
 router.get('/material/add/form', function(req, res, next) {
   res.render('material_add_form', { title: 'material_add_form' });
 });

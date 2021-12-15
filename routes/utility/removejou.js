@@ -4,7 +4,7 @@
 const sql = require('./asyncDB');
 
 //----------------------------------
-// 刪除商品
+// 刪除手帳
 //----------------------------------
 var remove = async function(jouno){
     var result;
