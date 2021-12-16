@@ -7,14 +7,16 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="/css/main.css">
 	<link rel="stylesheet" href="/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/flexslider.css">
 	<link rel="stylesheet" href="/css/templatemo-style.css">
-	<link rel="stylesheet" href="/css/new.css">
+	
 </head>
 
 <body class="homepage is-preload">
 	<div id="page-wrapper">
 		<!-- Nav -->
-		<nav id="nav">
+		 <!-- Nav -->
+		 <nav id="nav">
             <ul><a href="/user/show" id="logo">ACT JOURNAL</a>
                 <li class="current"><a href="/user/show">首頁</a></li>
                 <li>
@@ -52,48 +54,36 @@
                 <li><a href="/member/add/form" class="button">註冊</a></li>
             </ul>
         </nav>
-		<br>
-		<div class="box-user">
-			<div class="send-message">
-				<div class="section-heading">
-					<h2>刪除書櫃</h2>
-				</div>
-				<br>
-				<div class="col-md-8">
-					<form action="/bookshelf/remo" method="post">
-						<div class="form">
-							<span class="name">書櫃名稱: </span>
-							<br>
-							<span class="value">
-								<select name="bsfno">
-									<% for(var i=0; i<result.bookshelf.length; i++) {%>
-										<option value="<%= result.bookshelf[i].bsfno %>">
-											<%= result.bookshelf[i].bsfname %>
-										</option>
-									<% } %>
-								</select>
-							</span>
-							<br>
-							<span class="name"></span>
-							<span class="value"><input type="submit" value="確認"></span>
-						</div>
-					</form>
-
-				</div>
-
-
+		<!-- Banner -->
+        <div class="tm-banner-inner">
+            <br>
+            <h1 class="tm-banner-title">您還沒有書櫃</h1>
+            <br>
+            
+            <div id="addpage"><a href="/bookshelf/add/form"><input type="submit" value="新增書櫃"></a></div>
+        </div>
+        <img src="/img/banner-3.jpg" alt="Image" />
+		
+		<section class="tm-banner"></section>
+			<!-- Copyright -->
+			<div id="copyright">
+				<ul class="menu">
+					<li>Design</li>
+					<li>&copy;
+						NTUB110508
+					</li>
+				</ul>
 			</div>
-		</div>
+			</div>
+		</section>
 	</div>
-
-	<!--navbar外掛-->
-	<script src="/js/jquery.min.js"></script>
-	<script src="/js/jquery.dropotron.min.js"></script>
-	<script src="/js/util.js"></script>
-	<script src="/js/jquery.scrolly.min.js"></script>
-	<script src="/js/breakpoints.min.js"></script>
-	<script src="/js/main.js"></script>
-
+			<!--navbar外掛-->
+			<script src="/js/jquery.min.js"></script>
+			<script src="/js/jquery.dropotron.min.js"></script>
+			<script src="/js/util.js"></script>
+			<script src="/js/jquery.scrolly.min.js"></script>
+			<script src="/js/breakpoints.min.js"></script>
+			<script src="/js/main.js"></script>
 
 </body>
 

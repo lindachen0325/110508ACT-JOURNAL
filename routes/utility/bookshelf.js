@@ -44,7 +44,7 @@ var getDropdownData = async function(bsfno){
 //------------------------------------------
 //執行資料庫動作的函式-刪除會員書櫃
 //------------------------------------------
-var remove = async function(bsfno){
+var remo = async function(bsfno){
     var result;
 
     await sql('DELETE FROM bookshelf WHERE bsfno=$1', [bsfno])
@@ -94,4 +94,4 @@ var query = async function(bsfno){
 }
 
 //匯出
-module.exports = {addbsf,getDropdownData,remove,update,query};
+module.exports = {addbsf,getDropdownData,remo,update,query};

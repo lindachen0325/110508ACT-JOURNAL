@@ -9,11 +9,11 @@ router.post('/', function(req, res, next) {
     no=req.session.memno;
     var bsfno=req.body.bsfno;     
     
-    bookshelf.remove(bsfno).then(d => {
+    bookshelf.remo(bsfno).then(d => {
         if (d>=0){
-            res.render('removeSuccess', {results:d});  //傳至成功頁面
+            res.render('success', {results:d});  //傳至成功頁面
         }else{
-            res.render('removeFail');     //導向錯誤頁面
+            res.render('fail');     //導向錯誤頁面
         }  
     })
 });

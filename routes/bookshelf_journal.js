@@ -4,6 +4,10 @@ var router = express.Router();
 //增加引用函式
 const bookshelf = require('./utility/journal');
 
+router.get('/nullmybookcase', function(req, res, next) {
+    res.render('nullmybookcase', { title: 'nullmybookcase' });
+  });
+
 //接收GET請求
 router.get('/', function(req, res, next) {
     no=req.session.memno;
@@ -22,7 +26,7 @@ router.get('/', function(req, res, next) {
             username= req.session.username;
             res.render('bookcase', {items:data, bsfnames:names,username:username});//將資料傳給顯示頁面
         }else{
-            res.render('notFound');  //導向找不到頁面
+            res.render('nullmybookcase');  //導向找不到頁面
         }  
     })
 });

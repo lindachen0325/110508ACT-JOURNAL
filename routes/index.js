@@ -26,6 +26,8 @@ router.get('/success', function(req, res, next) {
   res.render('success', { title: 'success' });
 });
 
+
+
 router.get('/fail', function(req, res, next) {
   res.render('fail', { title: 'fail' });
 });
