@@ -4,6 +4,9 @@ var router = express.Router();
 //增加引用函式
 const member = require('./utility/member');
 
+router.get('/addusersuccess', function(req, res, next) {
+    res.render('addusersuccess', { title: 'addusersuccess' });
+  });
 //接收POST請求
 router.post('/', function(req, res, next) {
     var password = req.body.password;
@@ -21,7 +24,7 @@ router.post('/', function(req, res, next) {
     
     member.add(newData).then(d => {
         if (d==0){
-            res.render('success');  //傳至成功頁面
+            res.render('addusersuccess');  //傳至成功頁面
         }else{
             res.render('fail');     //導向錯誤頁面
         }  
